@@ -4,6 +4,9 @@ var app = express();
 //routing
 app.use(require('./routes'));
 
+
+
+
 //templating
 var ECT = require('ect');
 var ectRenderer = ECT({
