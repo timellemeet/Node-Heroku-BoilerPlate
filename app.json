@@ -1,0 +1,6 @@
+{
+  "name": "Node.js AgencyService",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/timellemeet/AgencyService",
+  "keywords": ["node", "express", "static"]
+}
