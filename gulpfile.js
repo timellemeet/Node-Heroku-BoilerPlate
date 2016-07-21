@@ -33,7 +33,7 @@ gulp.task('compile', function() {
     var mergedStream = merge(scssStream /*,cssStream*/ )
         .pipe(concat('style.css'))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/generated/'));
 
     return mergedStream;
 
