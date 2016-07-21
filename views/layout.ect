@@ -4,55 +4,26 @@
         <title>
             <%- @title %>
         </title>
+        <link href="/sass-style.css" rel="stylesheet" type="text/css">
+        </link>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/basket.js/0.5.2/basket.full.min.js">
         </script>
-        <noscript>
-            <link href="/generated/style.css" rel="stylesheet" type="text/css">
-            </link>
-        </noscript>
         <% if process.env.NODE_ENV is 'development' : %>
         <script type="text/javascript">
             basket.clear();
         </script>
         <% end %>
         <script type="text/javascript">
-            //javascript essential to be loaded as fast as possible
-            basket
-                .require({ url: 'libs/create-stylesheet.min.js' })
-                .then(function () {
-            //css
-            basket.require(
-                            //add stylesheets here
-                            { url: '/generated/style.css', execute: false },
-                            { url: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', execute: false }
-
-                            //importing style sheets
-                            ).then(function(responses) {
-                    for (var i in responses) {
-                        _stylesheet.appendStyleSheet(responses[i].data, function(err, style) {
-                            if (err) {
-                                console.error(err);
-                            } else {
-                                console.log("Stylesheet successfully load via basket.js");
-                            }
-                        });
-                    }
-                });
-            });
+            //javascript files
+                basket.require(
+                    //{ url: 'libs/create-stylesheet.min.js' },
+                    { url: 'https://code.jquery.com/jquery-3.1.0.slim.min.js'}
+                );
         </script>
     </head>
     <body>
         <% include 'header' %>
-<% content %>
-<% include 'footer' %>
-        <script type="text/javascript">
-            //javascript which can be loaded later
-        basket.require(
-
-                { url: 'https://code.jquery.com/jquery-3.1.0.slim.min.js' }/*,
-                { url: 'underscore.js' },
-                { url: 'backbone.js' }*/
-            );
-        </script>
+        <% content %>
+        <% include 'footer' %>
     </body>
 </html>

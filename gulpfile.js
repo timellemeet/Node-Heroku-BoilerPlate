@@ -22,19 +22,11 @@ gulp.task('default', function() {
 });
 
 gulp.task('compile', function() {
-    var scssStream = gulp.src(['./views/main.scss', './views/**/*.scss'])
+    //compiling own sass
+    gulp
+        .src(['./views/*.scss', './views/**/*.scss'])
         .pipe(sass())
-        .pipe(concat('scss-files.scss'));
-    /*
-    var cssStream = gulp.src([...])
-        .pipe(concat('css-files.css'))
-    ;*/
-
-    var mergedStream = merge(scssStream /*,cssStream*/ )
-        .pipe(concat('style.css'))
+        .pipe(concat('sass-style.css'))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('./assets/public/generated/'));
-
-    return mergedStream;
-
+        .pipe(gulp.dest('./assets/public/'));
 });
