@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
 
-//routing
-app.use(require('./routes'));
+//routing every file in routes
+var glob = require('glob'),
+    path = require('path');
 
-
-
+glob.sync('./routes/*.js').forEach(function(file) {
+    app.use(require(path.resolve(file)));
+});
 
 //templating
 var ECT = require('ect');

@@ -1,37 +1,37 @@
 {
-    "name": "node-js-sample",
-    "version": "0.2.0",
-    "description": "A sample Node.js app using Express 4",
-    "main": "app.js",
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "^4.13.3"
-    },
-    "engines": {
-        "node": "4.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/timellemeet/AgencyService"
-    },
-    "keywords": [
+  "name": "node-js-sample",
+  "version": "0.2.0",
+  "description": "A sample Node.js app using Express 4",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timellemeet/AgencyService"
+  },
+  "keywords": [
     "node",
     "heroku",
     "express"
   ],
-    "author": "Tim Ellemeet",
-    "contributors": [
+  "author": "Tim Ellemeet",
+  "contributors": [
     ""
   ],
-    "license": "",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-clean-css": "^2.0.11",
-        "gulp-concat": "^2.6.0",
-        "gulp-nodemon": "^2.1.0",
-        "gulp-sass": "^2.3.2",
-        "merge-stream": "^1.0.0"
-    }
+  "license": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-sass": "^2.3.2",
+    "merge-stream": "^1.0.0"
+  }
 }

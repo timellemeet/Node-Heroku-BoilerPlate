@@ -6,7 +6,20 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     merge = require('merge-stream');
 
-gulp.task('default', ['compile', 'nodemon']);
+gulp.task('default', function() {
+
+    // configure nodemon
+    nodemon({
+        script: './app.js',
+        ext: 'js html scss ect',
+        watch: ['./views', './routes', './'],
+        tasks: ['compile'],
+        env: {
+            'NODE_ENV': 'development'
+        },
+
+    });
+});
 
 gulp.task('compile', function() {
     var scssStream = gulp.src(['./views/main.scss', './views/**/*.scss'])
@@ -24,17 +37,4 @@ gulp.task('compile', function() {
 
     return mergedStream;
 
-});
-
-gulp.task('nodemon', function() {
-    nodemon({
-        script: './app.js',
-        ext: 'js html scss ect',
-        watch: ['./views', './routes', './'],
-        tasks: ['compile'],
-        env: {
-            'NODE_ENV': 'development'
-        },
-
-    });
 });
