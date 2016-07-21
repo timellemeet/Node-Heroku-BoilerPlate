@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title><%- @title %></title>
-</head>
-<body>
-<% include 'header' %>
+    <head>
+        <title>
+            <%- @title %>
+        </title>
+        <!-- Latest compiled and minified CSS -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet">
+            <!-- Optional theme -->
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" rel="stylesheet">
+            </link>
+        </link>
+    </head>
+    <body>
+        <% include 'header' %>
 <% content %>
 <% include 'footer' %>
-</body>
+    </body>
 </html>

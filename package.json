@@ -4,7 +4,7 @@
     "description": "A sample Node.js app using Express 4",
     "main": "app.js",
     "scripts": {
-        "start": "gulp"
+        "start": "node app.js"
     },
     "dependencies": {
         "express": "^4.13.3"
@@ -28,6 +28,10 @@
     "license": "",
     "devDependencies": {
         "gulp": "^3.9.1",
-        "gulp-nodemon": "^2.1.0"
+        "gulp-clean-css": "^2.0.11",
+        "gulp-concat": "^2.6.0",
+        "gulp-nodemon": "^2.1.0",
+        "gulp-sass": "^2.3.2",
+        "merge-stream": "^1.0.0"
     }
 }
