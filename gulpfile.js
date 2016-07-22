@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    minify = require('gulp-minify');
 
 gulp.task('default', function() {
 
@@ -12,7 +13,8 @@ gulp.task('default', function() {
     nodemon({
         script: './app.js',
         ext: 'js html scss ect',
-        watch: ['./views', './routes', './'],
+        ignore: ['assets/public/*'],
+        //watch: ['./views', './routes', './'],
         tasks: ['compile'],
         env: {
             'NODE_ENV': 'development'
@@ -22,11 +24,23 @@ gulp.task('default', function() {
 });
 
 gulp.task('compile', function() {
-    //compiling own sass
+    //compiling own sass from views
     gulp
         .src(['./views/*.scss', './views/**/*.scss'])
         .pipe(sass())
         .pipe(concat('sass-style.css'))
         .pipe(cleanCSS())
+        .pipe(gulp.dest('./assets/public/'));
+
+    //compiling own javascript from views
+    gulp
+        .src(['./views/*.js', './views/**/*.js'])
+        .pipe(concat('main-script.js'))
+        .pipe(minify({
+            ext: {
+                src: '-debug.js',
+                min: '.js'
+            },
+        }))
         .pipe(gulp.dest('./assets/public/'));
 });
