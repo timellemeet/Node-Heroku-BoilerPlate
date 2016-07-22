@@ -8,13 +8,11 @@ var gulp = require('gulp'),
     minify = require('gulp-minify');
 
 gulp.task('default', function() {
-
     // configure nodemon
     nodemon({
         script: './app.js',
         ext: 'js html scss ect',
         ignore: ['assets/public/*'],
-        //watch: ['./views', './routes', './'],
         tasks: ['compile'],
         env: {
             'NODE_ENV': 'development'
